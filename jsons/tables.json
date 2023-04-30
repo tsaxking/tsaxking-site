@@ -1,0 +1,73 @@
+{
+    /*
+        "TableName": {
+            "columns": {
+                "ColumnName": {
+                    "type": "javascript type",
+                    "init": "TEXT NOT NULL (etc.)"
+                }
+            },
+            "rows": [
+                {
+                    "column": "value"
+                }
+            ],
+            "description": "TableDescription"
+        }
+    */
+
+    // note: after you have created a table, you cannot do these things:
+    //      - change the name of the table
+    //      - change the name of the columns
+    //      - change the type of the columns
+    //      - delete columns
+    //      - delete tables
+    //      - add unique columns (UNIQUE, AUTO_INCREMENT, PRIMARY KEY, etc.)
+    //      - add NOT NULL columns
+
+    "Accounts": {
+        "columns": {
+            "id": {
+                "type": "string",
+                "init": "TEXT NOT NULL",
+                "primaryKey": true
+            },
+            "username": {
+                "type": "string",
+                "init": "TEXT NOT NULL UNIQUE"
+            },
+            "password": {
+                "type": "string",
+                "init": "TEXT NOT NULL"
+            },
+            "email": {
+                "type": "string",
+                "init": "TEXT NOT NULL UNIQUE"
+            },
+            "discordLink": {
+                "type": "json",
+                "init": "TEXT"
+            }
+        },
+        "rows": [
+            {
+                "id": "1",
+                "username": "admin",
+                "password": "admin",
+                "email": "test@gmail.com"
+            },
+            {
+                "id": "2",
+                "username": "user",
+                "password": "user",
+                "email": "test2@gmail.com"
+            },
+            {
+                "id":"56eve",
+                "username":"tsaxking",
+                "password": "uteosim",
+                "email": "taylor.reese.king@gmail.com"
+            }
+        ]
+    }
+}
